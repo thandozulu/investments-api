@@ -1,13 +1,13 @@
-# Automated Withdrawals REST API
+# Automated Investment Withdrawals REST API
+(Having fun with ORMS and stuff)
 
-Automated Withdrawals is a Spring Boot REST API that enables investors to automate their withdrawal requests for their financial products. This application streamlines the process, allowing investors to easily manage their withdrawals with confidence.
+This is a Spring Boot REST API that enables investors to automate their withdrawal requests for their financial products. This application streamlines the process, allowing investors to easily manage their withdrawals with confidence.
 
 ## Features
 
 - Secure and efficient withdrawal automation.
 - User-friendly API for managing withdrawal requests.
 - Seamless integration with a PostgreSQL database.
-- Hibernate ORM for database schema generation.
 - Dockerized PostgreSQL for easy development setup.
 
 ## Getting Started
@@ -24,3 +24,17 @@ Run the following command to create a PostgreSQL container with the required con
 
 ```bash
 docker run --name postgres-container -e POSTGRES_DB=root -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres
+```
+
+### Running the Application
+
+Run the InvestmentsApiApplication using Maven or within Intellij
+
+### To-Do
+
+Spring Security
+Validation
+Logic in the services
+Swagger docs
+
+
