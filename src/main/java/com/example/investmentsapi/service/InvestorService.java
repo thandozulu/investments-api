@@ -1,6 +1,7 @@
 package com.example.investmentsapi.service;
 
 import com.example.investmentsapi.model.Investor;
+import com.example.investmentsapi.model.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,4 +20,5 @@ public interface InvestorService {
 
     void deleteInvestor(Long id);
 
+    List<Product> getProductsForInvestor(Long id);
 }

@@ -1,6 +1,7 @@
 package com.example.investmentsapi.controller;
 
 import com.example.investmentsapi.model.Investor;
+import com.example.investmentsapi.model.Product;
 import com.example.investmentsapi.service.InvestorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,5 +53,12 @@ public class InvestorController {
         investorService.deleteInvestor(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @GetMapping("/{id}/products")
+    public ResponseEntity<List<Product>> getProductsForInvestor(@PathVariable Long id) {
+        List<Product> products = investorService.getProductsForInvestor(id);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
 
 }
