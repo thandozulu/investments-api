@@ -1,11 +1,14 @@
 package com.example.investmentsapi.service;
 
 import com.example.investmentsapi.model.Investor;
+import com.example.investmentsapi.model.Product;
 import com.example.investmentsapi.repository.InvestorRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class InvestorServiceImpl implements InvestorService {
 
     private final InvestorRepository investorRepository;
@@ -37,5 +40,11 @@ public class InvestorServiceImpl implements InvestorService {
     @Override
     public void deleteInvestor(Long id) {
         investorRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Product> getProductsForInvestor(Long id) {
+        // TODO: 2023/11/08
+        return null;
     }
 }
