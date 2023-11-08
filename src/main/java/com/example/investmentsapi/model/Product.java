@@ -27,4 +27,7 @@ public class Product {
     @ManyToOne
     @JoinColumn
     private Investor investor;
+
+    @OneToMany(mappedBy = "product")
+    private Set<Withdrawal> withdrawal;
 }
