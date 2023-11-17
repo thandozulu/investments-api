@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/investor")
@@ -55,9 +56,14 @@ public class InvestorController {
     }
 
     @GetMapping("/{id}/products")
-    public ResponseEntity<List<Product>> getProductsForInvestor(@PathVariable Long id) {
-        List<Product> products = investorService.getProductsForInvestor(id);
-        return new ResponseEntity<>(products, HttpStatus.OK);
+    public ResponseEntity<Set<Product>> getProductsForInvestor(@PathVariable Long id) {
+        Optional<Investor> investor = investorService.getInvestorById(id);
+        if (investor.isPresent()){
+            Set<Product> products = investor.get().getProducts();
+            return  new ResponseEntity<>(products, HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
 
